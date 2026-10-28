@@ -1,0 +1,153 @@
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse and order products from ShopEasy.">
+
+    <title>Products | ShopEasy</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">ShopEasy</a>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+                <li><a href="orders.html">My Orders</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-links">
+            <a href="login.html" class="login-link">Login</a>
+            <a href="register.html" class="btn btn-primary">Register</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Heading -->
+        <section class="page-banner">
+            <div>
+                <p class="section-subtitle">EXPLORE OUR COLLECTION</p>
+                <h1>Our Products</h1>
+                <p>Find your favourite products at ShopEasy.</p>
+            </div>
+        </section>
+
+        <!-- Search and Filter Section -->
+        <section class="product-controls section">
+            <div class="search-box">
+                <label for="search-input">Search products</label>
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Search by product name..."
+                    autocomplete="off"
+                >
+            </div>
+
+            <div class="filter-box">
+                <label for="category-filter">Category</label>
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Home">Home & Living</option>
+                    <option value="Accessories">Accessories</option>
+                </select>
+            </div>
+
+            <div class="filter-box">
+                <label for="sort-filter">Sort by</label>
+                <select id="sort-filter">
+                    <option value="default">Default</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name">Name: A to Z</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Product Results -->
+        <section class="products-section section">
+            <div class="products-heading">
+                <h2>Available Products</h2>
+                <p id="product-count" aria-live="polite">
+                    Loading products...
+                </p>
+            </div>
+
+            <div
+                class="product-grid"
+                id="products-container"
+                aria-live="polite"
+            >
+                <p class="loading-message">Loading products...</p>
+            </div>
+
+            <div id="empty-message" class="empty-message" hidden>
+                <h3>No products found</h3>
+                <p>Try changing your search or category filter.</p>
+                <button type="button" id="clear-filters" class="btn btn-primary">
+                    Clear Filters
+                </button>
+            </div>
+
+            <p id="error-message" class="error-message" role="alert" hidden>
+                Unable to load products. Please try again later.
+            </p>
+
+            <div class="view-all">
+                <button type="button" id="retry-button" class="btn btn-outline" hidden>
+                    Retry
+                </button>
+            </div>
+        </section>
+
+        <!-- Workshop Information -->
+        <section class="payment-note-section">
+            <p class="payment-note">
+                This is a workshop project. Orders are recorded without
+                a real online payment gateway.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h2>ShopEasy</h2>
+                <p>Your simple online product ordering platform.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html">Cart</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; <span id="current-year"></span>
+                ShopEasy. B.Tech Workshop Project.
+            </p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+```

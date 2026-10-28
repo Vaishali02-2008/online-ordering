@@ -1,0 +1,170 @@
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | ShopEasy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <a href="index.html" class="logo">ShopEasy</a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <!-- Checkout Section -->
+    <main class="auth-page">
+        <section class="auth-card checkout-card">
+            <h1>Checkout</h1>
+            <p class="section-subtitle">
+                Enter your delivery details to place your order.
+            </p>
+
+            <!-- Delivery Form -->
+            <form id="checkout-form">
+
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input
+                        type="text"
+                        id="full-name"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        autocomplete="tel"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <textarea
+                        id="address"
+                        name="address"
+                        placeholder="House number, street, area"
+                        autocomplete="street-address"
+                        rows="3"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        placeholder="Enter your city"
+                        autocomplete="address-level2"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="pincode">PIN Code</label>
+                    <input
+                        type="text"
+                        id="pincode"
+                        name="pincode"
+                        placeholder="Enter 6-digit PIN code"
+                        inputmode="numeric"
+                        pattern="[0-9]{6}"
+                        maxlength="6"
+                        autocomplete="postal-code"
+                        required
+                    >
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h2>Order Summary</h2>
+
+                    <div class="summary-row">
+                        <span>Items</span>
+                        <span id="checkout-items">₹0.00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Delivery Charge</span>
+                        <span id="checkout-delivery">₹0.00</span>
+                    </div>
+
+                    <hr>
+
+                    <div class="summary-row total-row">
+                        <strong>Total Amount</strong>
+                        <strong id="checkout-total">₹0.00</strong>
+                    </div>
+                </div>
+
+                <!-- Payment Option -->
+                <div class="form-group">
+                    <label for="payment-method">Payment Method</label>
+                    <select
+                        id="payment-method"
+                        name="paymentMethod"
+                        required
+                    >
+                        <option value="cod">Cash on Delivery</option>
+                    </select>
+                </div>
+
+                <p id="checkout-message" role="status"
+                   aria-live="polite"></p>
+
+                <button
+                    type="submit"
+                    id="place-order-button"
+                    class="btn btn-primary"
+                >
+                    Place Order
+                </button>
+            </form>
+
+            <p class="auth-footer">
+                <a href="cart.html">← Back to Cart</a>
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 ShopEasy. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+```

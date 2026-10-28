@@ -1,0 +1,229 @@
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | ShopEasy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <a href="index.html" class="logo">ShopEasy Admin</a>
+
+        <nav class="nav-links">
+            <a href="index.html">View Store</a>
+            <a href="products.html">Products</a>
+            <a href="orders.html">My Orders</a>
+            <a href="login.html">Logout</a>
+        </nav>
+    </header>
+
+    <!-- Admin Dashboard -->
+    <main class="section">
+        <div class="container">
+
+            <h1>Admin Dashboard</h1>
+            <p class="section-subtitle">
+                Manage your products, inventory, and customer orders.
+            </p>
+
+            <!-- Dashboard Statistics -->
+            <section class="admin-stats">
+                <div class="stat-card">
+                    <h3>Total Products</h3>
+                    <p id="total-products">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Total Orders</h3>
+                    <p id="total-orders">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Pending Orders</h3>
+                    <p id="pending-orders">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Total Sales</h3>
+                    <p id="total-sales">₹0.00</p>
+                </div>
+            </section>
+
+            <!-- Admin Messages -->
+            <div
+                id="admin-message"
+                role="status"
+                aria-live="polite"
+            ></div>
+
+            <!-- Product Management -->
+            <section class="admin-section">
+                <h2>Manage Products</h2>
+
+                <button
+                    type="button"
+                    id="show-product-form"
+                    class="btn btn-primary"
+                >
+                    Add New Product
+                </button>
+
+                <form id="product-form" hidden>
+                    <h3 id="product-form-title">Add Product</h3>
+
+                    <input type="hidden" id="product-id">
+
+                    <div class="form-group">
+                        <label for="product-name">Product Name</label>
+                        <input
+                            type="text"
+                            id="product-name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-description">
+                            Description
+                        </label>
+                        <textarea
+                            id="product-description"
+                            rows="3"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-category">Category</label>
+                        <select id="product-category" required>
+                            <option value="">Select Category</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Fashion">Fashion</option>
+                            <option value="Home">Home</option>
+                            <option value="Accessories">Accessories</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-price">Price (₹)</label>
+                        <input
+                            type="number"
+                            id="product-price"
+                            min="0.01"
+                            step="0.01"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-stock">Stock Quantity</label>
+                        <input
+                            type="number"
+                            id="product-stock"
+                            min="0"
+                            step="1"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-image">Image URL</label>
+                        <input
+                            type="url"
+                            id="product-image"
+                            placeholder="https://example.com/image.jpg"
+                        >
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="save-product-button"
+                    >
+                        Save Product
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn"
+                        id="cancel-product-button"
+                    >
+                        Cancel
+                    </button>
+                </form>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-products-list">
+                            <tr>
+                                <td colspan="5">
+                                    Products will load here.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Order Management -->
+            <section class="admin-section">
+                <h2>Manage Customer Orders</h2>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Update Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="admin-orders-list">
+                            <tr>
+                                <td colspan="6">
+                                    Orders will load here.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <button
+                type="button"
+                id="refresh-admin-button"
+                class="btn btn-primary"
+            >
+                Refresh Dashboard
+            </button>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 ShopEasy. Admin Dashboard.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+```

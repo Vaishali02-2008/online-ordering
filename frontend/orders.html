@@ -1,0 +1,78 @@
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | ShopEasy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <a href="index.html" class="logo">ShopEasy</a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="orders.html">My Orders</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <!-- My Orders Section -->
+    <main class="section">
+        <div class="container">
+            <h1>My Orders</h1>
+            <p class="section-subtitle">
+                View your order history and track your purchases.
+            </p>
+
+            <div id="orders-message" role="status" aria-live="polite"></div>
+
+            <!-- Orders will be loaded here by JavaScript -->
+            <div id="orders-container">
+
+                <div id="orders-loading">
+                    Loading your orders...
+                </div>
+
+                <div id="orders-empty" hidden>
+                    <h2>No Orders Yet</h2>
+                    <p>You have not placed any orders yet.</p>
+                    <a href="products.html" class="btn btn-primary">
+                        Start Shopping
+                    </a>
+                </div>
+
+                <div id="orders-list"></div>
+
+            </div>
+
+            <button
+                type="button"
+                id="retry-orders-button"
+                class="btn btn-primary"
+                hidden
+            >
+                Try Again
+            </button>
+
+            <a href="products.html" class="btn btn-primary">
+                Continue Shopping
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 ShopEasy. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+```
